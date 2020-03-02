@@ -197,8 +197,7 @@
 
       const removeMobile = document.getElementById("removeMobile");
       removeMobile.addEventListener("click", function() {
-        const mobilePrice = document.getElementById("itemMobileTotal")
-          .innerText;
+        const mobilePrice = document.getElementById("mobileTotal").innerText;
         const subTotal = document.getElementById("subTotal").innerText;
         const totalMobile = parseFloat(subTotal);
         const valueMobile = totalMobile - mobilePrice;
@@ -206,13 +205,13 @@
         document.getElementById("subTotal").innerText = valueMobile;
         document.getElementById("Total").innerText = valueMobile;
 
-        const removeMobile = document.getElementById("cartMobile");
-        removeMobile.style.display = "none";
+        const removeCart = document.getElementById("cartMobile");
+        removeCart.style.display = "none";
       });
 
       const removeCover = document.getElementById("removeCover");
       removeCover.addEventListener("click", function() {
-        const coverPrice = document.getElementById("itemCoverTotal").innerText;
+        const coverPrice = document.getElementById("coverTotal").innerText;
         const subTotal = document.getElementById("subTotal").innerText;
         const totalCover = parseFloat(subTotal);
         const valueCover = totalCover - coverPrice;
@@ -220,8 +219,8 @@
         document.getElementById("subTotal").innerText = valueCover;
         document.getElementById("Total").innerText = valueCover;
 
-        const removeCover = document.getElementById("cartCover");
-        removeCover.style.display = "none";
+        const removeCart = document.getElementById("cartCover");
+        removeCart.style.display = "none";
       });
     </script>
   </body>
