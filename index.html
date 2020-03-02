@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="cart">
+          <div class="col-md-12 col-lg-10 mx-auto">
+            <div class="cart-item" id="cartMobile">
+              <div class="row">
+                <div class="col-md-7 center-item">
+                  <img src="images/product-1.png" alt="" />
+                  <h5>iPhone 11 128GB Black</h5>
+                </div>
+
+                <div class="col-md-5 center-item">
+                  <div class="input-group number-spinner">
+                    <button class="btn btn-default" id="btnMinusMobile">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      value="1"
+                      id="textBoxMobile"
+                    />
+                    <button class="btn btn-default">
+                      <i class="fas fa-plus" id="btnPlusMobile"></i>
+                    </button>
+                  </div>
+                  <h5>$ <span id="mobileTotal">1219</span></h5>
+                  <img
+                    src="images/remove.png"
+                    alt=""
+                    class="remove-item"
+                    id="removeMobile"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item" id="cartCover">
+              <div class="row">
+                <div class="col-md-7 center-item mx-auto">
+                  <img src="images/product-2.png" alt="" />
+                  <h5>iPhone 11 Silicone Case - Black</h5>
+                </div>
+                <div class="col-md-5 center-item">
+                  <div class="input-group number-spinner">
+                    <button class="btn btn-default" id="btnMinusCover">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      value="1"
+                      id="textBoxCover"
+                    />
+                    <button class="btn btn-default" id="btnPlusCover">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <h5>$<span id="coverTotal">59</span></h5>
+                  <img
+                    src="images/remove.png"
+                    alt=""
+                    class="remove-item"
+                    id="removeCover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <h5>Subtotal:</h5>
+                  <h5>Tax:</h5>
+                  <h5>Total:</h5>
+                </div>
+
+                <div class="col-md-4 status">
+                  <h5>$<span id="subTotal">1278</span></h5>
+                  <h5>$<span id="tax"> 00</span></h5>
+                  <h5>$<span id="Total">1278</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 pt-4 pb-4">
+              <button type="button" class="btn btn-success check-out">
+                Check Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      //Mobile
+
+      const btnPlusMobile = document.getElementById("btnPlusMobile");
+      btnPlusMobile.addEventListener("click", function() {
+        const textBoxMobile = document.getElementById("textBoxMobile").value++;
+        const mobileTotal = document.getElementById("mobileTotal").innerText;
+        const itemMobile = parseFloat(mobileTotal);
+        const addItemMobile = itemMobile + 1219;
+
+        document.getElementById("mobileTotal").innerText = addItemMobile;
+
+        const subTotal = document.getElementById("subTotal").innerText;
+        const total = parseFloat(subTotal);
+        const totalValueMobile = total + 1219;
+
+        document.getElementById("subTotal").innerText = totalValueMobile;
+        document.getElementById("Total").innerText = totalValueMobile;
+      });
+
+      const btnMinusMobile = document.getElementById("btnMinusMobile");
+      btnMinusMobile.addEventListener("click", function() {
+        const textBoxMobile = document.getElementById("textBoxMobile");
+        if (textBoxMobile.value <= 0 && minusValueMobile <= 0) {
+          textBoxMobile.value = 0;
+          minusValueMobile = 0;
+        } else {
+          textBoxMobile.value--;
+        }
+        const mobileTotal = document.getElementById("mobileTotal").innerText;
+        const itemMobile = parseFloat(mobileTotal);
+        const minusItemMobile = itemMobile - 1219;
+
+        document.getElementById("mobileTotal").innerText = minusItemMobile;
+
+        const subTotal = document.getElementById("subTotal").innerText;
+        const totalMobile = parseFloat(subTotal);
+        const minusValueMobile = totalMobile - 1219;
+
+        document.getElementById("subTotal").innerText = minusValueMobile;
+        document.getElementById("Total").innerText = minusValueMobile;
+      });
+
+      //cover
+
+      const btnPlusCover = document.getElementById("btnPlusCover");
+      btnPlusCover.addEventListener("click", function() {
+        const textBoxCover = document.getElementById("textBoxCover").value++;
+        const coverTotal = document.getElementById("coverTotal").innerText;
+        const itemCover = parseFloat(CoverTotal);
+        const addItemCover = itemCover + 59;
+
+        document.getElementById("CoverTotal").innerText = addItemCover;
+
+        const subTotal = document.getElementById("subTotal").innerText;
+        const total = parseFloat(subTotal);
+        const totalValueCover = total + 59;
+
+        document.getElementById("subTotal").innerText = totalValueCover;
+        document.getElementById("Total").innerText = totalValueCover;
+      });
+
+      const btnMinusCover = document.getElementById("btnMinusCover");
+      btnMinusCover.addEventListener("click", function() {
+        const textBoxCover = document.getElementById("textBoxCover");
+        if (textBoxCover.value <= 0 && minusValueCover <= 0) {
+          textBoxCover.value = 0;
+          minusValueCover = 0;
+        } else {
+          textBoxCover.value--;
+        }
+        const coverTotal = document.getElementById("coverTotal").innerText;
+        const itemCover = parseFloat(coverTotal);
+        const minusItemCover = itemCover - 59;
+
+        document.getElementById("itemCoverTotal").innerText = minusItemCover;
+
+        const subTotal = document.getElementById("subTotal").innerText;
+        const totalCover = parseFloat(subTotal);
+        const minusValueCover = totalCover - 59;
+
+        document.getElementById("subTotal").innerText = minusValueCover;
+        document.getElementById("Total").innerText = minusValueCover;
+      });
+
+      //RemoveCart
+
+      const removeMobile = document.getElementById("removeMobile");
+      removeMobile.addEventListener("click", function() {
+        const mobilePrice = document.getElementById("itemMobileTotal")
+          .innerText;
+        const subTotal = document.getElementById("subTotal").innerText;
+        const totalMobile = parseFloat(subTotal);
+        const valueMobile = totalMobile - mobilePrice;
+
+        document.getElementById("subTotal").innerText = valueMobile;
+        document.getElementById("netTotal").innerText = valueMobile;
+
+        const removeMobile = document.getElementById("cartMobile");
+        removeMobile.style.display = "none";
+      });
+
+      const removeCover = document.getElementById("removeCover");
+      removeCover.addEventListener("click", function() {
+        const coverPrice = document.getElementById("itemCoverTotal").innerText;
+        const subTotal = document.getElementById("subTotal").innerText;
+        const totalCover = parseFloat(subTotal);
+        const valueCover = totalCover - coverPrice;
+
+        document.getElementById("subTotal").innerText = valueCover;
+        document.getElementById("Total").innerText = valueCover;
+
+        const removeCover = document.getElementById("cartCover");
+        removeCover.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
