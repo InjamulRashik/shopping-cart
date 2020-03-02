@@ -157,10 +157,10 @@
       btnPlusCover.addEventListener("click", function() {
         const textBoxCover = document.getElementById("textBoxCover").value++;
         const coverTotal = document.getElementById("coverTotal").innerText;
-        const itemCover = parseFloat(CoverTotal);
+        const itemCover = parseFloat(coverTotal);
         const addItemCover = itemCover + 59;
 
-        document.getElementById("CoverTotal").innerText = addItemCover;
+        document.getElementById("coverTotal").innerText = addItemCover;
 
         const subTotal = document.getElementById("subTotal").innerText;
         const total = parseFloat(subTotal);
@@ -183,7 +183,7 @@
         const itemCover = parseFloat(coverTotal);
         const minusItemCover = itemCover - 59;
 
-        document.getElementById("itemCoverTotal").innerText = minusItemCover;
+        document.getElementById("coverTotal").innerText = minusItemCover;
 
         const subTotal = document.getElementById("subTotal").innerText;
         const totalCover = parseFloat(subTotal);
@@ -204,7 +204,7 @@
         const valueMobile = totalMobile - mobilePrice;
 
         document.getElementById("subTotal").innerText = valueMobile;
-        document.getElementById("netTotal").innerText = valueMobile;
+        document.getElementById("Total").innerText = valueMobile;
 
         const removeMobile = document.getElementById("cartMobile");
         removeMobile.style.display = "none";
